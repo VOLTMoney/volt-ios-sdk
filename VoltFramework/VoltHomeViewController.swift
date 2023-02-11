@@ -14,9 +14,9 @@ public class VoltHomeViewController: BaseViewController {
     
     private var voltUrl: URL?
     
-    public init() {
+    public init(mobileNumber: String) {
         super.init(nibName: "VoltHomeViewController", bundle: Bundle(for: VoltHomeViewController.self))
-        voltUrl = Volt.createVoltSDKUrl()
+        voltUrl = Volt.initVoltSDK(mobileNumber: mobileNumber)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -27,8 +27,22 @@ public class VoltHomeViewController: BaseViewController {
         super.viewDidLoad()
         voltWebView?.uiDelegate = self
         voltWebView?.navigationDelegate = self
-        self.navigationController?.isNavigationBarHidden = true
+        addBackButton()
         loadWebView()
+    }
+
+    func addBackButton() {
+        let backButton = UIButton(type: .custom)
+        backButton.setImage(UIImage(named: "back"), for: .normal)
+        //backButton.setTitle("Back", for: .normal)
+        backButton.setTitleColor(backButton.tintColor, for: .normal)
+        backButton.addTarget(self, action: #selector(self.backAction(_:)), for: .touchUpInside)
+
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
+    }
+
+    @IBAction func backAction(_ sender: UIButton) {
+       let _ = self.navigationController?.popViewController(animated: true)
     }
 
     private func loadWebView() {

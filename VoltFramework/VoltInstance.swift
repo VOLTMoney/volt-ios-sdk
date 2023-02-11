@@ -8,19 +8,19 @@
 import Foundation
 
 public class VoltInstance {
-    let appKey: String?
-    let appSecret: String?
-    let partnerPlatform: String?
-    let primaryColor: String?
-    let secondaryColor: String?
+    let app_key: String?
+    let app_secret: String?
+    let partner_platform: String?
+    let primary_color: String?
+    let secondary_color: String?
     let ref: String?
 
-    public init(appKey: String?, appSecret: String?, partnerPlatform: String?, primaryColor: String? = nil, secondaryColor: String? = nil, ref: String? = nil) {
-        self.appKey = appKey
-        self.appSecret = appSecret
-        self.partnerPlatform = partnerPlatform
-        self.primaryColor = primaryColor
-        self.secondaryColor = secondaryColor
+    public init(app_key: String?, app_secret: String?, partner_platform: String?, primary_color: String? = nil, secondary_color: String? = nil, ref: String? = nil) {
+        self.app_key = app_key
+        self.app_secret = app_secret
+        self.partner_platform = partner_platform
+        self.primary_color = primary_color
+        self.secondary_color = secondary_color
         self.ref = ref
     }
 }

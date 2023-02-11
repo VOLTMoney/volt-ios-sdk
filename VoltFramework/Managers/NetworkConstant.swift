@@ -11,7 +11,7 @@ class NetworkConstant {
 
     static let platform: String = "SDK_INVESTWELL"
     static let baseURL: String = "https://api.staging.voltmoney.in"
-    static let webBaseURL: String = "https://app.staging.voltmoney.in"
+    static let webBaseURL: String = "https://app.staging.voltmoney.in/partnerplatform?"
 
     static let loginTokenURL: String = baseURL + "/v1/partner/platform/auth/login"
     static let createCreditApplicationURL = baseURL + "/v1/partner/platform/las/createCreditApplication"

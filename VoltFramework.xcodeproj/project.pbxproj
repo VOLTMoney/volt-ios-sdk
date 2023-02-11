@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6711C8C42997CA0E00B68E78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6711C8C32997CA0E00B68E78 /* Assets.xcassets */; };
 		67D117D529967290001EE9B1 /* VoltInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D117D429967290001EE9B1 /* VoltInstance.swift */; };
 		67D117E42996ABEA001EE9B1 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D117E32996ABEA001EE9B1 /* APIResponse.swift */; };
 		67F1F715298D5DB9001B7B12 /* VoltFramework.docc in Sources */ = {isa = PBXBuildFile; fileRef = 67F1F714298D5DB9001B7B12 /* VoltFramework.docc */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6711C8C32997CA0E00B68E78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67D117D429967290001EE9B1 /* VoltInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoltInstance.swift; sourceTree = "<group>"; };
 		67D117E32996ABEA001EE9B1 /* APIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		67F1F710298D5DB9001B7B12 /* VoltFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VoltFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +83,7 @@
 		67F1F706298D5DB9001B7B12 = {
 			isa = PBXGroup;
 			children = (
+				6711C8C32997CA0E00B68E78 /* Assets.xcassets */,
 				67F1F712298D5DB9001B7B12 /* VoltFramework */,
 				67F1F71E298D5DBA001B7B12 /* VoltFrameworkTests */,
 				67F1F711298D5DB9001B7B12 /* Products */,
@@ -232,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				67F1F737298D6E35001B7B12 /* VoltHomeViewController.xib in Resources */,
+				6711C8C42997CA0E00B68E78 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

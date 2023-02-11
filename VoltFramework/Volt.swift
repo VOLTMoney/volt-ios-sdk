@@ -8,43 +8,42 @@
 import Foundation
 
 protocol VoltProtocol {
-    static func createApplication(dob: String, email: String, panNumber: String, mobileNumber: Int, callback: ((_ response: APIResponse?) -> Void)?)
-    static func createVoltSDKUrl() -> URL?
+    static func precreateApplication(dob: String, email: String, panNumber: String, mobileNumber: Int, callback: ((_ response: APIResponse?) -> Void)?)
+    static func initVoltSDK(mobileNumber: String) -> URL?
     static var voltInstance: VoltInstance? { get }
 }
 
 public class Volt: VoltProtocol {
     static var voltInstance: VoltInstance?
-    static var mobileNumber: Int? = 0
 
     public init(voltInstance: VoltInstance? = nil) {
         Volt.voltInstance = voltInstance
     }
 
-    public static func createVoltSDKUrl() -> URL? {
-        var webURL = NetworkConstant.webBaseURL + "/?"
+    public static func initVoltSDK(mobileNumber: String) -> URL? {
+        var webURL = NetworkConstant.webBaseURL
         if self.voltInstance?.ref != nil {
             let ref = "ref=" + (voltInstance?.ref ?? "") + "&"
             webURL.append(ref)
         }
 
-        if voltInstance?.primaryColor != nil {
-            let primaryColor = "primaryColor=" + (voltInstance?.primaryColor ?? "") + "&"
+        if voltInstance?.primary_color != nil {
+            let primaryColor = "primaryColor=" + (voltInstance?.primary_color ?? "") + "&"
             webURL.append(primaryColor)
         }
 
-        if voltInstance?.secondaryColor != nil {
-            let secondaryColor = "secondaryColor=" + (voltInstance?.secondaryColor ?? "") + "&"
+        if voltInstance?.secondary_color != nil {
+            let secondaryColor = "secondaryColor=" + (voltInstance?.secondary_color ?? "") + "&"
             webURL.append(secondaryColor)
         }
 
-        if self.mobileNumber != nil {
-            let mobileNumber = "user=" + String(self.mobileNumber ?? 0) + "&"
+        if mobileNumber != "" {
+            let mobileNumber = "user=" + mobileNumber + "&"
             webURL.append(mobileNumber)
         }
 
-        if voltInstance?.partnerPlatform != nil {
-            let partnerPlatform = "partnerplatform?platform=" + (voltInstance?.partnerPlatform ?? "")
+        if voltInstance?.partner_platform != nil {
+            let partnerPlatform = "platform=" + (voltInstance?.partner_platform ?? "")
             webURL.append(partnerPlatform)
         }
 
@@ -53,7 +52,7 @@ public class Volt: VoltProtocol {
 
     private static func generateClientToken() -> (APIResponse?, Bool?) {
         var responseData: APIResponse?
-        if let authTokenData = RestApiManager.getLoginToken(urlString: NetworkConstant.loginTokenURL, appKey: voltInstance?.appKey ?? "", appSecret: voltInstance?.appSecret ?? "", method: .post) {
+        if let authTokenData = RestApiManager.getLoginToken(urlString: NetworkConstant.loginTokenURL, appKey: voltInstance?.app_key ?? "", appSecret: voltInstance?.app_secret ?? "", method: .post) {
             do {
                 responseData = try JSONDecoder().decode(APIResponse.self, from: authTokenData)
                 if responseData?.authToken != nil {
@@ -71,8 +70,7 @@ public class Volt: VoltProtocol {
         }
     }
 
-    public static func createApplication(dob: String, email: String, panNumber: String, mobileNumber: Int, callback: ((_ response: APIResponse?) -> Void)?) {
-        self.mobileNumber = mobileNumber
+    public static func precreateApplication(dob: String, email: String, panNumber: String, mobileNumber: Int, callback: ((_ response: APIResponse?) -> Void)?) {
         var responseData: APIResponse?
         if generateClientToken().1 == true {
             if let createApplicationData = RestApiManager.createCreditApplication(urlString: NetworkConstant.createCreditApplicationURL, dob: dob, email: email, panNumber: panNumber, mobileNumber: mobileNumber, method: .post) {
