@@ -16,7 +16,7 @@ public class VoltHomeViewController: BaseViewController {
     
     public init(mobileNumber: String) {
         super.init(nibName: "VoltHomeViewController", bundle: Bundle(for: VoltHomeViewController.self))
-        voltUrl = Volt.initVoltSDK(mobileNumber: mobileNumber)
+        voltUrl = VoltSDKContainer.initVoltSDK(mobileNumber: mobileNumber)
     }
 
     required init?(coder aDecoder: NSCoder) {

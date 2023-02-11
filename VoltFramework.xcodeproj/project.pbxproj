@@ -14,7 +14,7 @@
 		67F1F71B298D5DBA001B7B12 /* VoltFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67F1F710298D5DB9001B7B12 /* VoltFramework.framework */; };
 		67F1F720298D5DBA001B7B12 /* VoltFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F1F71F298D5DBA001B7B12 /* VoltFrameworkTests.swift */; };
 		67F1F721298D5DBA001B7B12 /* VoltFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 67F1F713298D5DB9001B7B12 /* VoltFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		67F1F72B298D5DE6001B7B12 /* Volt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F1F72A298D5DE6001B7B12 /* Volt.swift */; };
+		67F1F72B298D5DE6001B7B12 /* VoltSDKContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F1F72A298D5DE6001B7B12 /* VoltSDKContainer.swift */; };
 		67F1F736298D6E35001B7B12 /* VoltHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F1F734298D6E34001B7B12 /* VoltHomeViewController.swift */; };
 		67F1F737298D6E35001B7B12 /* VoltHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67F1F735298D6E34001B7B12 /* VoltHomeViewController.xib */; };
 		67F1F73E298D6EAE001B7B12 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F1F739298D6EAE001B7B12 /* NetworkManager.swift */; };
@@ -43,7 +43,7 @@
 		67F1F714298D5DB9001B7B12 /* VoltFramework.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = VoltFramework.docc; sourceTree = "<group>"; };
 		67F1F71A298D5DBA001B7B12 /* VoltFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoltFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		67F1F71F298D5DBA001B7B12 /* VoltFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoltFrameworkTests.swift; sourceTree = "<group>"; };
-		67F1F72A298D5DE6001B7B12 /* Volt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Volt.swift; sourceTree = "<group>"; };
+		67F1F72A298D5DE6001B7B12 /* VoltSDKContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoltSDKContainer.swift; sourceTree = "<group>"; };
 		67F1F734298D6E34001B7B12 /* VoltHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoltHomeViewController.swift; sourceTree = "<group>"; };
 		67F1F735298D6E34001B7B12 /* VoltHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VoltHomeViewController.xib; sourceTree = "<group>"; };
 		67F1F739298D6EAE001B7B12 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -104,7 +104,7 @@
 			children = (
 				67D117E029969B07001EE9B1 /* Model */,
 				67F1F738298D6EAE001B7B12 /* Managers */,
-				67F1F72A298D5DE6001B7B12 /* Volt.swift */,
+				67F1F72A298D5DE6001B7B12 /* VoltSDKContainer.swift */,
 				67D117D429967290001EE9B1 /* VoltInstance.swift */,
 				67F1F713298D5DB9001B7B12 /* VoltFramework.h */,
 				67F1F714298D5DB9001B7B12 /* VoltFramework.docc */,
@@ -256,7 +256,7 @@
 				67F1F73E298D6EAE001B7B12 /* NetworkManager.swift in Sources */,
 				67F1F736298D6E35001B7B12 /* VoltHomeViewController.swift in Sources */,
 				67F1F740298D6EAE001B7B12 /* RestApiManager.swift in Sources */,
-				67F1F72B298D5DE6001B7B12 /* Volt.swift in Sources */,
+				67F1F72B298D5DE6001B7B12 /* VoltSDKContainer.swift in Sources */,
 				67D117E42996ABEA001EE9B1 /* APIResponse.swift in Sources */,
 				67F1F741298D6EAE001B7B12 /* NetworkConstant.swift in Sources */,
 				67D117D529967290001EE9B1 /* VoltInstance.swift in Sources */,
