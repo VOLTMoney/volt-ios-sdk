@@ -7,6 +7,20 @@
 
 import Foundation
 
+public enum VOLTENV: CustomStringConvertible {
+    case STAGING
+    case PRODUCTION
+
+    public var description: String {
+        switch self {
+        case .STAGING:
+            return "https://app.staging.voltmoney.in/partnerplatform?"
+        case .PRODUCTION:
+            return "https://app.voltmoney.in/partnerplatform?"
+        }
+    }
+}
+
 class NetworkConstant {
 
     static let platform: String = "SDK_INVESTWELL"

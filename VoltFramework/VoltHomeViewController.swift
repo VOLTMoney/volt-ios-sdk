@@ -25,16 +25,31 @@ public class VoltHomeViewController: BaseViewController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Loan Against Mutual Fund"
         voltWebView?.uiDelegate = self
         voltWebView?.navigationDelegate = self
         addBackButton()
         loadWebView()
+        navigatioColor()
     }
 
-    func addBackButton() {
+    private func navigatioColor() {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor(named: "primaryColor")
+
+        let titleAttribute = [NSAttributedString.Key.font:  UIFont.systemFont(ofSize: 18, weight: .bold), NSAttributedString.Key.foregroundColor: UIColor.white] //alter to fit your needs
+        appearance.titleTextAttributes = titleAttribute
+
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+    }
+
+    private func addBackButton() {
         let backButton = UIButton(type: .custom)
-        backButton.setImage(UIImage(named: "back"), for: .normal)
+        backButton.setImage(UIImage(systemName: "chevron.backward"), for: .normal)
         //backButton.setTitle("Back", for: .normal)
+        backButton.tintColor = .white
         backButton.setTitleColor(backButton.tintColor, for: .normal)
         backButton.addTarget(self, action: #selector(self.backAction(_:)), for: .touchUpInside)
 

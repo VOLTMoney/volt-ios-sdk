@@ -21,33 +21,33 @@ public class VoltSDKContainer: VoltProtocol {
     }
 
     public static func initVoltSDK(mobileNumber: String) -> URL? {
-        var webURL = NetworkConstant.webBaseURL
+        var webURL = voltInstance?.voltEnv?.description
         if self.voltInstance?.ref != nil {
             let ref = "ref=" + (voltInstance?.ref ?? "") + "&"
-            webURL.append(ref)
+            webURL?.append(ref)
         }
 
         if voltInstance?.primary_color != nil {
             let primaryColor = "primaryColor=" + (voltInstance?.primary_color ?? "") + "&"
-            webURL.append(primaryColor)
+            webURL?.append(primaryColor)
         }
 
         if voltInstance?.secondary_color != nil {
             let secondaryColor = "secondaryColor=" + (voltInstance?.secondary_color ?? "") + "&"
-            webURL.append(secondaryColor)
+            webURL?.append(secondaryColor)
         }
 
         if mobileNumber != "" {
             let mobileNumber = "user=" + mobileNumber + "&"
-            webURL.append(mobileNumber)
+            webURL?.append(mobileNumber)
         }
 
         if voltInstance?.partner_platform != nil {
             let partnerPlatform = "platform=" + (voltInstance?.partner_platform ?? "")
-            webURL.append(partnerPlatform)
+            webURL?.append(partnerPlatform)
         }
 
-        return URL(string: webURL)
+        return URL(string: webURL ?? "")
     }
 
     private static func generateClientToken() -> (APIResponse?, Bool?) {

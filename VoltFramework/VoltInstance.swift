@@ -14,8 +14,14 @@ public class VoltInstance {
     let primary_color: String?
     let secondary_color: String?
     let ref: String?
+    var voltEnv: VOLTENV?
 
-    public init(app_key: String?, app_secret: String?, partner_platform: String?, primary_color: String? = nil, secondary_color: String? = nil, ref: String? = nil) {
+    public init(voltEnv: VOLTENV? = nil, app_key: String?, app_secret: String?, partner_platform: String?, primary_color: String? = nil, secondary_color: String? = nil, ref: String? = nil) {
+        if voltEnv == nil {
+            self.voltEnv = .STAGING
+        } else {
+            self.voltEnv = voltEnv
+        }
         self.app_key = app_key
         self.app_secret = app_secret
         self.partner_platform = partner_platform
