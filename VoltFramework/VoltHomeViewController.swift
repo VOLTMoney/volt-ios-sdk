@@ -13,6 +13,7 @@ public class VoltHomeViewController: BaseViewController {
     @IBOutlet weak var voltWebView: WKWebView!
     
     private var voltUrl: URL?
+    private var mobileNumber: String?
     
     public init(mobileNumber: String) {
         super.init(nibName: "VoltHomeViewController", bundle: Bundle(for: VoltHomeViewController.self))

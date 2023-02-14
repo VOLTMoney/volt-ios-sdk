@@ -9,7 +9,6 @@ import Foundation
 
 protocol VoltProtocol {
     static func preCreateApplication(dob: String, email: String, panNumber: String, mobileNumber: Int, callback: ((_ response: APIResponse?) -> Void)?)
-    static func initVoltSDK(mobileNumber: String) -> URL?
     static var voltInstance: VoltInstance? { get }
 }
 
@@ -20,29 +19,29 @@ public class VoltSDKContainer: VoltProtocol {
         VoltSDKContainer.voltInstance = voltInstance
     }
 
-    public static func initVoltSDK(mobileNumber: String) -> URL? {
+    internal static func initVoltSDK(mobileNumber: String) -> URL? {
         var webURL = voltInstance?.voltEnv?.description
-        if self.voltInstance?.ref != nil {
+        if self.voltInstance?.ref != "" {
             let ref = "ref=" + (voltInstance?.ref ?? "") + "&"
             webURL?.append(ref)
         }
 
-        if voltInstance?.primary_color != nil {
+        if (voltInstance?.primary_color != "") {
             let primaryColor = "primaryColor=" + (voltInstance?.primary_color ?? "") + "&"
             webURL?.append(primaryColor)
         }
 
-        if voltInstance?.secondary_color != nil {
+        if (voltInstance?.secondary_color != "") {
             let secondaryColor = "secondaryColor=" + (voltInstance?.secondary_color ?? "") + "&"
             webURL?.append(secondaryColor)
         }
 
-        if mobileNumber != "" {
+        if (mobileNumber.count > 2) {
             let mobileNumber = "user=" + mobileNumber + "&"
             webURL?.append(mobileNumber)
         }
 
-        if voltInstance?.partner_platform != nil {
+        if (voltInstance?.partner_platform != "") {
             let partnerPlatform = "platform=" + (voltInstance?.partner_platform ?? "")
             webURL?.append(partnerPlatform)
         }
