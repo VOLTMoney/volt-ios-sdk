@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6711C8C42997CA0E00B68E78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6711C8C32997CA0E00B68E78 /* Assets.xcassets */; };
+		678E3E16299FA6CA00679B6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6711C8C32997CA0E00B68E78 /* Assets.xcassets */; };
+		678E3E18299FA70900679B6B /* Assets.xcassets in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6711C8C32997CA0E00B68E78 /* Assets.xcassets */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		67D117D529967290001EE9B1 /* VoltInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D117D429967290001EE9B1 /* VoltInstance.swift */; };
 		67D117E42996ABEA001EE9B1 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D117E32996ABEA001EE9B1 /* APIResponse.swift */; };
 		67F1F715298D5DB9001B7B12 /* VoltFramework.docc in Sources */ = {isa = PBXBuildFile; fileRef = 67F1F714298D5DB9001B7B12 /* VoltFramework.docc */; };
-		67F1F71B298D5DBA001B7B12 /* VoltFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67F1F710298D5DB9001B7B12 /* VoltFramework.framework */; };
-		67F1F720298D5DBA001B7B12 /* VoltFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F1F71F298D5DBA001B7B12 /* VoltFrameworkTests.swift */; };
 		67F1F721298D5DBA001B7B12 /* VoltFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 67F1F713298D5DB9001B7B12 /* VoltFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		67F1F72B298D5DE6001B7B12 /* VoltSDKContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F1F72A298D5DE6001B7B12 /* VoltSDKContainer.swift */; };
 		67F1F736298D6E35001B7B12 /* VoltHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F1F734298D6E34001B7B12 /* VoltHomeViewController.swift */; };
@@ -24,15 +23,18 @@
 		67F1F743298D738E001B7B12 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F1F742298D738E001B7B12 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		67F1F71C298D5DBA001B7B12 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 67F1F707298D5DB9001B7B12 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 67F1F70F298D5DB9001B7B12;
-			remoteInfo = VoltFramework;
+/* Begin PBXCopyFilesBuildPhase section */
+		678E3E17299FA6EA00679B6B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				678E3E18299FA70900679B6B /* Assets.xcassets in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXContainerItemProxy section */
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6711C8C32997CA0E00B68E78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -41,8 +43,6 @@
 		67F1F710298D5DB9001B7B12 /* VoltFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VoltFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67F1F713298D5DB9001B7B12 /* VoltFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VoltFramework.h; sourceTree = "<group>"; };
 		67F1F714298D5DB9001B7B12 /* VoltFramework.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = VoltFramework.docc; sourceTree = "<group>"; };
-		67F1F71A298D5DBA001B7B12 /* VoltFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoltFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		67F1F71F298D5DBA001B7B12 /* VoltFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoltFrameworkTests.swift; sourceTree = "<group>"; };
 		67F1F72A298D5DE6001B7B12 /* VoltSDKContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoltSDKContainer.swift; sourceTree = "<group>"; };
 		67F1F734298D6E34001B7B12 /* VoltHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoltHomeViewController.swift; sourceTree = "<group>"; };
 		67F1F735298D6E34001B7B12 /* VoltHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VoltHomeViewController.xib; sourceTree = "<group>"; };
@@ -58,14 +58,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		67F1F717298D5DBA001B7B12 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				67F1F71B298D5DBA001B7B12 /* VoltFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,7 +77,6 @@
 			children = (
 				6711C8C32997CA0E00B68E78 /* Assets.xcassets */,
 				67F1F712298D5DB9001B7B12 /* VoltFramework */,
-				67F1F71E298D5DBA001B7B12 /* VoltFrameworkTests */,
 				67F1F711298D5DB9001B7B12 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,7 +85,6 @@
 			isa = PBXGroup;
 			children = (
 				67F1F710298D5DB9001B7B12 /* VoltFramework.framework */,
-				67F1F71A298D5DBA001B7B12 /* VoltFrameworkTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,14 +103,6 @@
 				67F1F735298D6E34001B7B12 /* VoltHomeViewController.xib */,
 			);
 			path = VoltFramework;
-			sourceTree = "<group>";
-		};
-		67F1F71E298D5DBA001B7B12 /* VoltFrameworkTests */ = {
-			isa = PBXGroup;
-			children = (
-				67F1F71F298D5DBA001B7B12 /* VoltFrameworkTests.swift */,
-			);
-			path = VoltFrameworkTests;
 			sourceTree = "<group>";
 		};
 		67F1F738298D6EAE001B7B12 /* Managers */ = {
@@ -164,6 +146,7 @@
 				67F1F70C298D5DB9001B7B12 /* Sources */,
 				67F1F70D298D5DB9001B7B12 /* Frameworks */,
 				67F1F70E298D5DB9001B7B12 /* Resources */,
+				678E3E17299FA6EA00679B6B /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -173,24 +156,6 @@
 			productName = VoltFramework;
 			productReference = 67F1F710298D5DB9001B7B12 /* VoltFramework.framework */;
 			productType = "com.apple.product-type.framework";
-		};
-		67F1F719298D5DBA001B7B12 /* VoltFrameworkTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 67F1F727298D5DBA001B7B12 /* Build configuration list for PBXNativeTarget "VoltFrameworkTests" */;
-			buildPhases = (
-				67F1F716298D5DBA001B7B12 /* Sources */,
-				67F1F717298D5DBA001B7B12 /* Frameworks */,
-				67F1F718298D5DBA001B7B12 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				67F1F71D298D5DBA001B7B12 /* PBXTargetDependency */,
-			);
-			name = VoltFrameworkTests;
-			productName = VoltFrameworkTests;
-			productReference = 67F1F71A298D5DBA001B7B12 /* VoltFrameworkTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -203,9 +168,6 @@
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					67F1F70F298D5DB9001B7B12 = {
-						CreatedOnToolsVersion = 14.2;
-					};
-					67F1F719298D5DBA001B7B12 = {
 						CreatedOnToolsVersion = 14.2;
 					};
 				};
@@ -224,7 +186,6 @@
 			projectRoot = "";
 			targets = (
 				67F1F70F298D5DB9001B7B12 /* VoltFramework */,
-				67F1F719298D5DBA001B7B12 /* VoltFrameworkTests */,
 			);
 		};
 /* End PBXProject section */
@@ -234,15 +195,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				678E3E16299FA6CA00679B6B /* Assets.xcassets in Resources */,
 				67F1F737298D6E35001B7B12 /* VoltHomeViewController.xib in Resources */,
-				6711C8C42997CA0E00B68E78 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		67F1F718298D5DBA001B7B12 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,29 +220,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		67F1F716298D5DBA001B7B12 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				67F1F720298D5DBA001B7B12 /* VoltFrameworkTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		67F1F71D298D5DBA001B7B12 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 67F1F70F298D5DB9001B7B12 /* VoltFramework */;
-			targetProxy = 67F1F71C298D5DBA001B7B12 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		67F1F722298D5DBA001B7B12 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					Standard,
+					Architectures,
+					"(arm64,",
+					"armv7)",
+					"-",
+					"$(ARCHS_STANDARD)",
+				);
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -322,6 +268,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -339,9 +286,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -352,6 +300,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					Standard,
+					Architectures,
+					"(arm64,",
+					"armv7)",
+					"-",
+					"$(ARCHS_STANDARD)",
+				);
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -399,6 +355,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -409,6 +366,14 @@
 		67F1F725298D5DBA001B7B12 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					Standard,
+					Architectures,
+					"(arm64,",
+					"armv7)",
+					"-",
+					"$(ARCHS_STANDARD)",
+				);
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -425,6 +390,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = Volt.VoltFramework;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -437,6 +403,14 @@
 		67F1F726298D5DBA001B7B12 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					Standard,
+					Architectures,
+					"(arm64,",
+					"armv7)",
+					"-",
+					"$(ARCHS_STANDARD)",
+				);
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -453,44 +427,11 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = Volt.VoltFramework;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		67F1F728298D5DBA001B7B12 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 28S7A2KMD3;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Volt.VoltFrameworkTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		67F1F729298D5DBA001B7B12 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 28S7A2KMD3;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Volt.VoltFrameworkTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -513,15 +454,6 @@
 			buildConfigurations = (
 				67F1F725298D5DBA001B7B12 /* Debug */,
 				67F1F726298D5DBA001B7B12 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		67F1F727298D5DBA001B7B12 /* Build configuration list for PBXNativeTarget "VoltFrameworkTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				67F1F728298D5DBA001B7B12 /* Debug */,
-				67F1F729298D5DBA001B7B12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
