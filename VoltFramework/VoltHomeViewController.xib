@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -12,33 +12,41 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VoltHomeViewController" customModule="VoltFramework" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outlet property="voltWebView" destination="c6z-Es-VXX" id="zrg-Fl-u43"/>
+                <outlet property="voltWebView" destination="EpZ-F1-cqi" id="4kc-JT-W2f"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c6z-Es-VXX">
-                    <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EpZ-F1-cqi">
+                    <rect key="frame" x="0.0" y="92" width="414" height="804"/>
                     <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <wkWebViewConfiguration key="configuration">
                         <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                         <wkPreferences key="preferences"/>
                     </wkWebViewConfiguration>
                 </wkWebView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="agb-O2-rzb" userLabel="Custom Navigation">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="92"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="c6z-Es-VXX" secondAttribute="trailing" id="38X-pu-vjR"/>
-                <constraint firstItem="c6z-Es-VXX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="9WM-A7-sdK"/>
-                <constraint firstItem="c6z-Es-VXX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="E0k-t1-Ibc"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="c6z-Es-VXX" secondAttribute="bottom" id="Uzr-E1-axU"/>
+                <constraint firstItem="agb-O2-rzb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="1f1-e4-cmW"/>
+                <constraint firstAttribute="trailing" secondItem="agb-O2-rzb" secondAttribute="trailing" id="6gi-P8-nRK"/>
+                <constraint firstItem="EpZ-F1-cqi" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Bq8-Xk-EHx"/>
+                <constraint firstItem="EpZ-F1-cqi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="agO-wW-YyO"/>
+                <constraint firstItem="EpZ-F1-cqi" firstAttribute="top" secondItem="agb-O2-rzb" secondAttribute="bottom" id="dqV-Y9-BkT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EpZ-F1-cqi" secondAttribute="trailing" id="jf6-NR-7Gv"/>
+                <constraint firstAttribute="bottom" secondItem="EpZ-F1-cqi" secondAttribute="bottom" id="srm-c7-DAp"/>
+                <constraint firstItem="agb-O2-rzb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xOc-4z-8cs"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-            <point key="canvasLocation" x="109" y="21"/>
+            <point key="canvasLocation" x="84.057971014492765" y="20.758928571428569"/>
         </view>
     </objects>
     <resources>

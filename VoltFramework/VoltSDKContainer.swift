@@ -13,7 +13,7 @@ protocol VoltProtocol {
 }
 
 public class VoltSDKContainer: VoltProtocol {
-    static var voltInstance: VoltInstance?
+    internal static var voltInstance: VoltInstance?
 
     public init(voltInstance: VoltInstance? = nil) {
         VoltSDKContainer.voltInstance = voltInstance

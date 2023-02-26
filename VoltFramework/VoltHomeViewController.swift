@@ -2,48 +2,48 @@
 //  VoltHomeViewController.swift
 //  VoltFramework
 //
-//  Created by 
+//  Created by
 //
 
 import UIKit
 import WebKit
+import Foundation
 
 public class VoltHomeViewController: BaseViewController {
 
-    @IBOutlet weak var voltWebView: WKWebView!
-    
+    //@IBOutlet public weak var customNavigationView: UIView!
+    @IBOutlet public weak var voltWebView: WKWebView!
+
     private var voltUrl: URL?
-    private var mobileNumber: String?
-    
-    public init(mobileNumber: String) {
+    public static var mobileNumber: String?
+    private var indicator: UIActivityIndicatorView?
+    var nvgStatus = false
+
+    // MARK: Object Lifecycle
+
+    public init(mobileNumber: String, hideNavigationBar: Bool) {
         super.init(nibName: "VoltHomeViewController", bundle: Bundle(for: VoltHomeViewController.self))
+        nvgStatus = hideNavigationBar
+
         voltUrl = VoltSDKContainer.initVoltSDK(mobileNumber: mobileNumber)
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
     public override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.isHidden = nvgStatus
         title = "Loan Against Mutual Fund"
         voltWebView?.uiDelegate = self
         voltWebView?.navigationDelegate = self
+        let color = VoltSDKContainer.voltInstance?.primary_color ?? "FF6E31"
+        self.view.backgroundColor = hexStringToUIColor(hex: color)
+        self.navigationController?.navigationBar.backgroundColor = hexStringToUIColor(hex: color)
+        self.navigationController?.navigationBar.standardAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         addBackButton()
         loadWebView()
-        navigatioColor()
-    }
-
-    private func navigatioColor() {
-        let appearance = UINavigationBarAppearance()
-        appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = UIColor(named: "primaryColor")
-
-        let titleAttribute = [NSAttributedString.Key.font:  UIFont.systemFont(ofSize: 18, weight: .bold), NSAttributedString.Key.foregroundColor: UIColor.white] //alter to fit your needs
-        appearance.titleTextAttributes = titleAttribute
-
-        navigationController?.navigationBar.standardAppearance = appearance
-        navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
 
     private func addBackButton() {
@@ -62,8 +62,30 @@ public class VoltHomeViewController: BaseViewController {
     }
 
     private func loadWebView() {
-        showProgressBar()
+        self.showProgressBar()
         voltWebView.load(NSURLRequest(url: voltUrl ?? URL(fileURLWithPath: "")) as URLRequest)
+    }
+
+    func hexStringToUIColor(hex: String) -> UIColor {
+        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+
+        if (cString.hasPrefix("#")) {
+            cString.remove(at: cString.startIndex)
+        }
+
+        if ((cString.count) != 6) {
+            return UIColor.gray
+        }
+
+        var rgbValue:UInt64 = 0
+        Scanner(string: cString).scanHexInt64(&rgbValue)
+
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
     }
 }
 
