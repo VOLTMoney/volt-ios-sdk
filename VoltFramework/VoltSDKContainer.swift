@@ -45,14 +45,26 @@ public class VoltSDKContainer: VoltProtocol {
                 
                 let customLogoUrl = "customLogoUrl=" + (fetchDataResponse?.platformSDKConfig?.customLogoURL?.description ?? "") + "&"
                 webURL?.append(customLogoUrl)
+                
+                
+                let showWA = "showWA=" + (fetchDataResponse?.platformSDKConfig?.csPillData?.showWA?.description ?? "") + "&"
+                webURL?.append(showWA)
 
+                
+                
+                let callData = "callData=" + (fetchDataResponse?.platformSDKConfig?.csPillData?.callData?.description ?? "") + "&"
+                webURL?.append(callData)
+                
+                let emailData = "emailData=" + (fetchDataResponse?.platformSDKConfig?.csPillData?.emailData?.description ?? "") + "&"
+                webURL?.append(emailData)
+                
                 
                 let showHome = "showHome=" + (fetchDataResponse?.platformSDKConfig?.showHome?.description ?? "") + "&"
                 webURL?.append(showHome)
                 
-                
                 let showBottomNav = "showVoltBottomNavBar=" + (fetchDataResponse?.platformSDKConfig?.showVoltBottomNavBar?.description ?? "") + "&"
                 webURL?.append(showBottomNav)
+            
                 
                 let showLogout = "showLogout=" + (fetchDataResponse?.platformSDKConfig?.showLogout?.description ?? "") + "&"
                 webURL?.append(showLogout)

@@ -63,10 +63,21 @@ struct PlatformSDKConfig: Codable {
     let customSupportNumber: String?
     let showPoweredByVoltMoney: Bool?
     let showVoltBottomNavBar : Bool?
+    let csPillData : CSPillData?
     enum CodingKeys: String, CodingKey {
         case showVoltDefaultHeader, showVoltLogo, showHome, showLogout, showPostLoanJourney
         case customLogoURL = "customLogoUrl"
         case customSupportNumber, showPoweredByVoltMoney
-        case showVoltBottomNavBar
+        case showVoltBottomNavBar,csPillData
     }
+}
+
+struct CSPillData: Codable {
+    let waData: String?        // WhatsApp data
+    let showWA: Bool?          // Show WhatsApp
+    let showEmail: Bool?       // Show Email
+    let showCall: Bool?        // Show Call
+    let emailData: String?     // Email data
+    let customIconUrl: String? // Custom icon URL
+    let callData: String?      // Call data
 }

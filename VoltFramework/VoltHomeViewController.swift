@@ -25,6 +25,8 @@ public class VoltHomeViewController: BaseViewController, SFSafariViewControllerD
                   }
               }
         }
+        
+    
         if let messageBody = message.body as? String, messageBody.contains("FAQ") {
             exitCallback?("FAQ_CLICKED")
             // The message contains "closePop"
@@ -72,7 +74,7 @@ public class VoltHomeViewController: BaseViewController, SFSafariViewControllerD
     
 
     //@IBOutlet public weak var customNavigationView: UIView!
-    @IBOutlet public weak var voltWebView: WKWebView!
+    @IBOutlet public  var voltWebView: WKWebView!
 
     private var voltUrl: URL?
     public static var authToken: String?
@@ -95,7 +97,7 @@ public class VoltHomeViewController: BaseViewController, SFSafariViewControllerD
             if let url = await VoltSDKContainer.initVoltSDK(authToken: authToken, platformCode: platformCode) {
                 print("Generated URL: \(url)")
                 voltUrl = url
-                loadWebView()
+                loadWebView(newUrl: url)
             } else {
                 voltUrl = nil
             }
@@ -106,6 +108,7 @@ public class VoltHomeViewController: BaseViewController, SFSafariViewControllerD
         fatalError("init(coder:) has not been implemented")
     }
 
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -142,6 +145,13 @@ public class VoltHomeViewController: BaseViewController, SFSafariViewControllerD
                // Initialize voltWebView with the configuration
         voltWebView = WKWebView(frame: UIScreen.main.bounds, configuration: config)
 
+        
+        
+        if voltWebView == nil {
+            print("voltWebView is nil. Initialization failed.")
+        } else {
+            print("voltWebView initialized successfully.")
+        }
                // Set delegates
                voltWebView.uiDelegate = self
                voltWebView.navigationDelegate = self
@@ -236,9 +246,24 @@ public class VoltHomeViewController: BaseViewController, SFSafariViewControllerD
        let _ = self.navigationController?.popViewController(animated: true)
     }
 
-    private func loadWebView() {
+    private func loadWebView(newUrl : URL) {
         
-        voltWebView.load(NSURLRequest(url: voltUrl ?? URL(fileURLWithPath: "")) as URLRequest)
+        print("Reached the url stage: \(voltUrl)")
+        
+        guard let voltUrl = voltUrl else {
+            print("voltUrl is nil")
+            return
+        }
+   
+        if voltWebView == nil {
+            print("voltWebView is nil. Initialization failed. on load")
+        } else {
+            print("voltWebView initialized successfully. on load")
+        }
+        let request = URLRequest(url: newUrl)
+        voltWebView.load(request)
+
+//        voltWebView.load(NSURLRequest(url: voltUrl ?? URL(fileURLWithPath: "")) as URLRequest)
         
     }
     

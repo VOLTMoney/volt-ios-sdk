@@ -41,7 +41,7 @@ public enum HttpHeader : Swift.String {
 }
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VoltHomeViewController : VoltFramework.BaseViewController, SafariServices.SFSafariViewControllerDelegate, WebKit.WKScriptMessageHandler {
   @_Concurrency.MainActor @preconcurrency @objc public func userContentController(_ userContentController: WebKit.WKUserContentController, didReceive message: WebKit.WKScriptMessage)
-  @objc @IBOutlet @_Concurrency.MainActor @preconcurrency weak public var voltWebView: WebKit.WKWebView!
+  @objc @IBOutlet @_Concurrency.MainActor @preconcurrency public var voltWebView: WebKit.WKWebView!
   @_Concurrency.MainActor @preconcurrency public static var authToken: Swift.String?
   @_Concurrency.MainActor @preconcurrency public static var platformCode: Swift.String?
   @_Concurrency.MainActor @preconcurrency public init(authToken: Swift.String, platformCode: Swift.String, hideNavigationBar: Swift.Bool, exitCallback: ((Swift.String) -> Swift.Void)?)

@@ -1980,8 +1980,17 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "WeakStorage",
-                "printedName": "WebKit.WKWebView?"
+                "name": "ImplicitlyUnwrappedOptional",
+                "printedName": "WebKit.WKWebView?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "WKWebView",
+                    "printedName": "WebKit.WKWebView",
+                    "usr": "c:objc(cs)WKWebView"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Var",
@@ -1994,13 +2003,11 @@
               "Preconcurrency",
               "Custom",
               "HasStorage",
-              "ReferenceOwnership",
               "AccessControl",
               "IBOutlet",
               "RawDocComment",
               "ObjC"
             ],
-            "ownership": 1,
             "hasStorage": true,
             "accessors": [
               {
@@ -13909,7 +13916,7 @@
     {
       "filePath": "\/Users\/sagarbhatnagar\/Documents\/iosSdk\/volt-ios-sdk\/VoltFramework\/VoltHomeViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3426,
+      "offset": 3422,
       "length": 5,
       "value": "false"
     },
