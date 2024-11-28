@@ -12,7 +12,6 @@ import SafariServices
 
 public class VoltHomeViewController: BaseViewController, SFSafariViewControllerDelegate, WKScriptMessageHandler {
     public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        print("JavaScript message received: \(message.body)")
 
         if let messageBody = message.body as? String, messageBody.contains("closeActivity") {
             // The message contains "closePop"
@@ -95,7 +94,6 @@ public class VoltHomeViewController: BaseViewController, SFSafariViewControllerD
         self.exitCallback = exitCallback
         Task {
             if let url = await VoltSDKContainer.initVoltSDK(authToken: authToken, platformCode: platformCode) {
-                print("Generated URL: \(url)")
                 voltUrl = url
                 loadWebView(newUrl: url)
             } else {
@@ -248,12 +246,6 @@ public class VoltHomeViewController: BaseViewController, SFSafariViewControllerD
 
     private func loadWebView(newUrl : URL) {
         
-        print("Reached the url stage: \(voltUrl)")
-        
-        guard let voltUrl = voltUrl else {
-            print("voltUrl is nil")
-            return
-        }
    
         if voltWebView == nil {
             print("voltWebView is nil. Initialization failed. on load")
@@ -268,6 +260,8 @@ public class VoltHomeViewController: BaseViewController, SFSafariViewControllerD
     }
     
   
+    
+
 
     func hexStringToUIColor(hex: String) -> UIColor {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
