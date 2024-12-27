@@ -360,10 +360,10 @@ extension VoltHomeViewController: WKNavigationDelegate {
             showLinksClicked(urlStr: url)
 
        }
-        else if let url = webView.url?.absoluteString, url.contains("digitallocker") {
-            showLinksClicked(urlStr: url)
-            decisionHandler(.cancel)
-        }
+//        else if let url = webView.url?.absoluteString, url.contains("digitallocker") {
+//            showLinksClicked(urlStr: url)
+//            decisionHandler(.cancel)
+//        }
         else if let url = webView.url?.absoluteString, url.contains("closePop") {
             safarWebView?.dismiss(animated: true)
             decisionHandler(.cancel)
