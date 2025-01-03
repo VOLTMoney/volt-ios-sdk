@@ -25,6 +25,12 @@ public class VoltHomeViewController: BaseViewController, SFSafariViewControllerD
               }
         }
         
+        
+        if let messageBody = message.body as? String, messageBody.contains("DSP") {
+            isLenderDsp = true
+            // Add your logic here to handle the "closePop" message
+        }
+        
     
         if let messageBody = message.body as? String, messageBody.contains("FAQ") {
             exitCallback?("FAQ_CLICKED")
@@ -78,6 +84,7 @@ public class VoltHomeViewController: BaseViewController, SFSafariViewControllerD
     private var voltUrl: URL?
     public static var authToken: String?
     public static var platformCode: String?
+    public  var isLenderDsp : Bool?
     private var safarWebView: SFSafariViewController?
     var exitCallback: ((String) -> Void)?
 
@@ -354,16 +361,21 @@ extension VoltHomeViewController: WKNavigationDelegate {
 //           decisionHandler(.cancel)
 //       }
         
+        
+        else if isLenderDsp ?? false{
+            decisionHandler(.allow)
+        }
      
         else if let url = webView.url?.absoluteString, url.contains("tech_process_v2") {
            decisionHandler(.cancel)
             showLinksClicked(urlStr: url)
 
        }
-//        else if let url = webView.url?.absoluteString, url.contains("digitallocker") {
-//            showLinksClicked(urlStr: url)
-//            decisionHandler(.cancel)
-//        }
+        else if let url = webView.url?.absoluteString, url.contains("digitallocker") {
+            showLinksClicked(urlStr: url)
+            decisionHandler(.cancel)
+        }
+     
         else if let url = webView.url?.absoluteString, url.contains("closePop") {
             safarWebView?.dismiss(animated: true)
             decisionHandler(.cancel)

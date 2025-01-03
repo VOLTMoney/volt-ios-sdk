@@ -9378,6 +9378,69 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "csPillData",
+            "printedName": "csPillData",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "VoltFramework.CSPillData?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CSPillData",
+                    "printedName": "VoltFramework.CSPillData",
+                    "usr": "s:13VoltFramework10CSPillDataV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13VoltFramework17PlatformSDKConfigV10csPillDataAA06CSPillG0VSgvp",
+            "mangledName": "$s13VoltFramework17PlatformSDKConfigV10csPillDataAA06CSPillG0VSgvp",
+            "moduleName": "VoltFramework",
+            "declAttributes": [
+              "HasStorage"
+            ],
+            "fixedbinaryorder": 9,
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "VoltFramework.CSPillData?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CSPillData",
+                        "printedName": "VoltFramework.CSPillData",
+                        "usr": "s:13VoltFramework10CSPillDataV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13VoltFramework17PlatformSDKConfigV10csPillDataAA06CSPillG0VSgvg",
+                "mangledName": "$s13VoltFramework17PlatformSDKConfigV10csPillDataAA06CSPillG0VSgvg",
+                "moduleName": "VoltFramework",
+                "implicit": true,
+                "declAttributes": [
+                  "Transparent"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "TypeDecl",
             "name": "CodingKeys",
             "printedName": "CodingKeys",
@@ -9725,6 +9788,44 @@
                 "fixedbinaryorder": 8
               },
               {
+                "kind": "Var",
+                "name": "csPillData",
+                "printedName": "csPillData",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(VoltFramework.PlatformSDKConfig.CodingKeys.Type) -> VoltFramework.PlatformSDKConfig.CodingKeys",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CodingKeys",
+                        "printedName": "VoltFramework.PlatformSDKConfig.CodingKeys",
+                        "usr": "s:13VoltFramework17PlatformSDKConfigV10CodingKeysO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "VoltFramework.PlatformSDKConfig.CodingKeys.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "CodingKeys",
+                            "printedName": "VoltFramework.PlatformSDKConfig.CodingKeys",
+                            "usr": "s:13VoltFramework17PlatformSDKConfigV10CodingKeysO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:13VoltFramework17PlatformSDKConfigV10CodingKeysO10csPillDatayA2EmF",
+                "mangledName": "$s13VoltFramework17PlatformSDKConfigV10CodingKeysO10csPillDatayA2EmF",
+                "moduleName": "VoltFramework",
+                "fixedbinaryorder": 9
+              },
+              {
                 "kind": "Constructor",
                 "name": "init",
                 "printedName": "init(rawValue:)",
@@ -10054,7 +10155,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(showVoltDefaultHeader:showVoltLogo:showHome:showLogout:showPostLoanJourney:customLogoURL:customSupportNumber:showPoweredByVoltMoney:showVoltBottomNavBar:)",
+            "printedName": "init(showVoltDefaultHeader:showVoltLogo:showHome:showLogout:showPostLoanJourney:customLogoURL:customSupportNumber:showPoweredByVoltMoney:showVoltBottomNavBar:csPillData:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -10187,11 +10288,25 @@
                   }
                 ],
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "VoltFramework.CSPillData?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CSPillData",
+                    "printedName": "VoltFramework.CSPillData",
+                    "usr": "s:13VoltFramework10CSPillDataV"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:13VoltFramework17PlatformSDKConfigV04showA13DefaultHeader0eA4Logo0E4Home0E6Logout0E15PostLoanJourney06customH3URL0N13SupportNumber0e9PoweredByA5Money0eA12BottomNavBarACSbSg_A4MSSSgAn2Mtcfc",
-            "mangledName": "$s13VoltFramework17PlatformSDKConfigV04showA13DefaultHeader0eA4Logo0E4Home0E6Logout0E15PostLoanJourney06customH3URL0N13SupportNumber0e9PoweredByA5Money0eA12BottomNavBarACSbSg_A4MSSSgAn2Mtcfc",
+            "usr": "s:13VoltFramework17PlatformSDKConfigV04showA13DefaultHeader0eA4Logo0E4Home0E6Logout0E15PostLoanJourney06customH3URL0N13SupportNumber0e9PoweredByA5Money0eA12BottomNavBar10csPillDataACSbSg_A4NSSSgAo2nA06CSPillZ0VSgtcfc",
+            "mangledName": "$s13VoltFramework17PlatformSDKConfigV04showA13DefaultHeader0eA4Logo0E4Home0E6Logout0E15PostLoanJourney06customH3URL0N13SupportNumber0e9PoweredByA5Money0eA12BottomNavBar10csPillDataACSbSg_A4NSSSgAo2nA06CSPillZ0VSgtcfc",
             "moduleName": "VoltFramework",
             "implicit": true,
             "init_kind": "Designated"
@@ -10255,6 +10370,669 @@
         "declAttributes": [
           "RawDocComment"
         ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "CSPillData",
+        "printedName": "CSPillData",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "waData",
+            "printedName": "waData",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13VoltFramework10CSPillDataV02waD0SSSgvp",
+            "mangledName": "$s13VoltFramework10CSPillDataV02waD0SSSgvp",
+            "moduleName": "VoltFramework",
+            "declAttributes": [
+              "HasStorage"
+            ],
+            "fixedbinaryorder": 0,
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13VoltFramework10CSPillDataV02waD0SSSgvg",
+                "mangledName": "$s13VoltFramework10CSPillDataV02waD0SSSgvg",
+                "moduleName": "VoltFramework",
+                "implicit": true,
+                "declAttributes": [
+                  "Transparent"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "showWA",
+            "printedName": "showWA",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13VoltFramework10CSPillDataV6showWASbSgvp",
+            "mangledName": "$s13VoltFramework10CSPillDataV6showWASbSgvp",
+            "moduleName": "VoltFramework",
+            "declAttributes": [
+              "HasStorage",
+              "RawDocComment"
+            ],
+            "fixedbinaryorder": 1,
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13VoltFramework10CSPillDataV6showWASbSgvg",
+                "mangledName": "$s13VoltFramework10CSPillDataV6showWASbSgvg",
+                "moduleName": "VoltFramework",
+                "implicit": true,
+                "declAttributes": [
+                  "Transparent"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "showEmail",
+            "printedName": "showEmail",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13VoltFramework10CSPillDataV9showEmailSbSgvp",
+            "mangledName": "$s13VoltFramework10CSPillDataV9showEmailSbSgvp",
+            "moduleName": "VoltFramework",
+            "declAttributes": [
+              "HasStorage",
+              "RawDocComment"
+            ],
+            "fixedbinaryorder": 2,
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13VoltFramework10CSPillDataV9showEmailSbSgvg",
+                "mangledName": "$s13VoltFramework10CSPillDataV9showEmailSbSgvg",
+                "moduleName": "VoltFramework",
+                "implicit": true,
+                "declAttributes": [
+                  "Transparent"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "showCall",
+            "printedName": "showCall",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13VoltFramework10CSPillDataV8showCallSbSgvp",
+            "mangledName": "$s13VoltFramework10CSPillDataV8showCallSbSgvp",
+            "moduleName": "VoltFramework",
+            "declAttributes": [
+              "HasStorage",
+              "RawDocComment"
+            ],
+            "fixedbinaryorder": 3,
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13VoltFramework10CSPillDataV8showCallSbSgvg",
+                "mangledName": "$s13VoltFramework10CSPillDataV8showCallSbSgvg",
+                "moduleName": "VoltFramework",
+                "implicit": true,
+                "declAttributes": [
+                  "Transparent"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "emailData",
+            "printedName": "emailData",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13VoltFramework10CSPillDataV05emailD0SSSgvp",
+            "mangledName": "$s13VoltFramework10CSPillDataV05emailD0SSSgvp",
+            "moduleName": "VoltFramework",
+            "declAttributes": [
+              "HasStorage",
+              "RawDocComment"
+            ],
+            "fixedbinaryorder": 4,
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13VoltFramework10CSPillDataV05emailD0SSSgvg",
+                "mangledName": "$s13VoltFramework10CSPillDataV05emailD0SSSgvg",
+                "moduleName": "VoltFramework",
+                "implicit": true,
+                "declAttributes": [
+                  "Transparent"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "customIconUrl",
+            "printedName": "customIconUrl",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13VoltFramework10CSPillDataV13customIconUrlSSSgvp",
+            "mangledName": "$s13VoltFramework10CSPillDataV13customIconUrlSSSgvp",
+            "moduleName": "VoltFramework",
+            "declAttributes": [
+              "HasStorage",
+              "RawDocComment"
+            ],
+            "fixedbinaryorder": 5,
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13VoltFramework10CSPillDataV13customIconUrlSSSgvg",
+                "mangledName": "$s13VoltFramework10CSPillDataV13customIconUrlSSSgvg",
+                "moduleName": "VoltFramework",
+                "implicit": true,
+                "declAttributes": [
+                  "Transparent"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "callData",
+            "printedName": "callData",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13VoltFramework10CSPillDataV04callD0SSSgvp",
+            "mangledName": "$s13VoltFramework10CSPillDataV04callD0SSSgvp",
+            "moduleName": "VoltFramework",
+            "declAttributes": [
+              "HasStorage",
+              "RawDocComment"
+            ],
+            "fixedbinaryorder": 6,
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13VoltFramework10CSPillDataV04callD0SSSgvg",
+                "mangledName": "$s13VoltFramework10CSPillDataV04callD0SSSgvg",
+                "moduleName": "VoltFramework",
+                "implicit": true,
+                "declAttributes": [
+                  "Transparent"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(waData:showWA:showEmail:showCall:emailData:customIconUrl:callData:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CSPillData",
+                "printedName": "VoltFramework.CSPillData",
+                "usr": "s:13VoltFramework10CSPillDataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:13VoltFramework10CSPillDataV02waD06showWA0F5Email0F4Call05emailD013customIconUrl04callD0ACSSSg_SbSgA2l3Ktcfc",
+            "mangledName": "$s13VoltFramework10CSPillDataV02waD06showWA0F5Email0F4Call05emailD013customIconUrl04callD0ACSSSg_SbSgA2l3Ktcfc",
+            "moduleName": "VoltFramework",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CSPillData",
+                "printedName": "VoltFramework.CSPillData",
+                "usr": "s:13VoltFramework10CSPillDataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:13VoltFramework10CSPillDataV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s13VoltFramework10CSPillDataV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "VoltFramework",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "any Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13VoltFramework10CSPillDataV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s13VoltFramework10CSPillDataV6encode2toys7Encoder_p_tKF",
+            "moduleName": "VoltFramework",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:13VoltFramework10CSPillDataV",
+        "mangledName": "$s13VoltFramework10CSPillDataV",
+        "moduleName": "VoltFramework",
         "conformances": [
           {
             "kind": "Conformance",
@@ -13916,7 +14694,7 @@
     {
       "filePath": "\/Users\/sagarbhatnagar\/Documents\/iosSdk\/volt-ios-sdk\/VoltFramework\/VoltHomeViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3422,
+      "offset": 3374,
       "length": 5,
       "value": "false"
     },
@@ -13965,7 +14743,7 @@
     {
       "filePath": "\/Users\/sagarbhatnagar\/Documents\/iosSdk\/volt-ios-sdk\/VoltFramework\/Model\/APIResponse.swift",
       "kind": "StringLiteral",
-      "offset": 2164,
+      "offset": 2197,
       "length": 15,
       "value": "\"customLogoUrl\""
     },
