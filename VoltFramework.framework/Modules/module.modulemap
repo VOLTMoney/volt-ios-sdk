@@ -1,6 +1,6 @@
 framework module VoltFramework {
   umbrella header "VoltFramework.h"
-
   export *
+
   module * { export * }
 }

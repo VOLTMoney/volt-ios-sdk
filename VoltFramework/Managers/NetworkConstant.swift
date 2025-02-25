@@ -29,8 +29,12 @@ class NetworkConstant {
 
     static let loginTokenURL: String = baseURL + "/v1/partner/platform/auth/login"
     static let createCreditApplicationURL = baseURL + "/v1/partner/platform/las/createCreditApplication"
+    static let getPlatoformDetails = baseURL + "/v1/partner/platform/las/createCreditApplication"
+
+
     static let loadWebViewURL = baseURL
 
     static let appKey = "volt-sdk-staging@voltmoney.in"
     static let appSecret = "e10b6eaf2e334d1b955434e25fcfe2d8"
+
 }

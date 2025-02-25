@@ -33,7 +33,7 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "67F1F719298D5DBA001B7B12"
+               BlueprintIdentifier = "4B7987BE2BA0500C00417FF3"
                BuildableName = "VoltFrameworkTests.xctest"
                BlueprintName = "VoltFrameworkTests"
                ReferencedContainer = "container:VoltFramework.xcodeproj">
