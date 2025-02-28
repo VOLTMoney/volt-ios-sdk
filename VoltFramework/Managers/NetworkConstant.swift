@@ -30,6 +30,8 @@ class NetworkConstant {
     static let loginTokenURL: String = baseURL + "/v1/partner/platform/auth/login"
     static let createCreditApplicationURL = baseURL + "/v1/partner/platform/las/createCreditApplication"
     static let getPlatoformDetails = baseURL + "/v1/partner/platform/las/createCreditApplication"
+    static let getSDKUrl = baseURL + "/v1/partner/platform/generate/sdk/url"
+
 
 
     static let loadWebViewURL = baseURL

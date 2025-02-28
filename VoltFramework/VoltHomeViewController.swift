@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import WebKit
+@preconcurrency import WebKit
 import Foundation
 import SafariServices
 
@@ -77,6 +77,7 @@ public class VoltHomeViewController: BaseViewController, SFSafariViewControllerD
         //agreementSetup
     }
     
+    
 
     //@IBOutlet public weak var customNavigationView: UIView!
     @IBOutlet public  var voltWebView: WKWebView!
@@ -117,10 +118,7 @@ public class VoltHomeViewController: BaseViewController, SFSafariViewControllerD
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        let isEnabled = navigationController?.interactivePopGestureRecognizer?.isEnabled
-        
-        print("LEFT SWIPE \(isEnabled)")
+                
         self.view.isUserInteractionEnabled = true
 
            // Create a left swipe gesture recognizer
