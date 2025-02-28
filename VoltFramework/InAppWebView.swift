@@ -13,10 +13,10 @@ class InAppWebView: UIViewController {
     var webView: WKWebView!
     
     override func viewDidLoad() {
-        let preferences = WKPreferences()
-        preferences.javaScriptEnabled = true
+        let preferences = WKWebpagePreferences()
+        preferences.allowsContentJavaScript = true
         let configuration = WKWebViewConfiguration()
-        configuration.preferences = preferences
+        configuration.defaultWebpagePreferences = preferences
         webView = WKWebView(frame: view.bounds, configuration: configuration)
     }
 }

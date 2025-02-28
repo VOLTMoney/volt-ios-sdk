@@ -75,71 +75,6 @@ class RestApiManager {
     }
 
    
-    
-    func fetchData(authToken: String, platformCode: String, isStaging : Bool) async throws -> (Bool, ClientDetails?) {
-        let environment = "staging" // Change this based on your environment
-        let apiUrl  : String
-        if isStaging {
-            apiUrl = "https://api.staging.voltmoney.in/app/pf/details/"
-        } else {
-            apiUrl = "https://api.voltmoney.in/app/pf/details/"
-        }
-        let voltPlatformCode = platformCode // Replace with your actual platform code
-        let platformAuthToken = authToken// Replace with your actual auth token
-
-        guard let url = URL(string: apiUrl) else {
-            throw FetchDataError.invalidURL
-        }
-
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.setValue(voltPlatformCode, forHTTPHeaderField: "X-AppPlatform")
-        request.setValue("Bearer \(platformAuthToken)", forHTTPHeaderField: "Authorization")
-
-        let (data, response): (Data?, URLResponse)
-        do {
-            (data, response) = try await URLSession.shared.data(for: request)
-        } catch {
-            throw FetchDataError.networkError(error)
-        }
-
-        guard let httpResponse = response as? HTTPURLResponse else {
-            throw FetchDataError.invalidResponse
-        }
-
-        guard httpResponse.statusCode == 200 else {
-            throw FetchDataError.statusCodeError(httpResponse.statusCode)
-        }
-
-        guard let jsonData = data else {
-            throw FetchDataError.noData
-        }
-        let decoder = JSONDecoder()
-        
-        do {
-            let model = try decoder.decode(ClientDetails.self, from: jsonData)
-            return (true, model)
-        }
-        catch {
-            print ("an error in catch")
-            print (error)
-            throw FetchDataError.jsonDecodingError(error)
-        }
-//        
-//
-//        do {
-//            let json = try JSONSerialization.jsonObject(with: jsonData, options: []) as? AnyObject
-//            print(json)
-//            return (true, json)
-//        } catch {
-//            throw FetchDataError.jsonDecodingError(error)
-//        }
-        
-        // Above code is commented for Serialize a JSON object in the later stages ,its a sort of a TODO
-    }
-
-
-    
 
 
     static func createCreditApplication(urlString: String, dob: String, email: String, panNumber: String, mobileNumber: Int, method: HttpMethod) -> Data? {
@@ -177,5 +112,78 @@ class RestApiManager {
         }
         return nil
     }
+    
+    
+    func generateRandomReferenceId() -> String {
+        let randomValue = Int.random(in: 0...Int.max)
+        return String(String(randomValue, radix: 36).suffix(8)) // Adjust length as needed
+    }
+    
+    
+    func fetchSDKUrl(
+        isStaging: Bool,
+        bodyData: [String: String],
+        appPlatform: String,
+        authToken: String,
+        method: HttpMethod
+    ) async throws -> URL? {
+        
+        
+        
+        let urlString  : String
+        if isStaging {
+            urlString = "https://api.staging.voltmoney.in/v1/partner/platform/generate/sdk/url"
+        } else {
+            urlString = "https://api.voltmoney.in/v1/partner/platform/generate/sdk/url"
+        }
+        
+        guard let url = URL(string: urlString) else {
+            throw FetchDataError.invalidURL
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = method.rawValue
+        
+        // Set headers
+        let headers = [
+            "Content-Type": "application/json",
+            "X-AppPlatform": appPlatform,
+            "Authorization": "Bearer \(authToken)",
+            "requestReferenceId" : generateRandomReferenceId()
+        ]
+        request.allHTTPHeaderFields = headers
+        
+        // Add body data if POST/PUT
+        if method == .post || method == .put {
+            do {
+                let jsonData = try JSONSerialization.data(withJSONObject: bodyData, options: [])
+                request.httpBody = jsonData
+            } catch {
+                throw FetchDataError.invalidResponse
+            }
+        }
+        
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request)
+            
+            guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+                throw FetchDataError.invalidResponse
+            }
+            
+            let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+            
+            // ✅ Extract URL from JSON response
+            if let urlString = json?["url"] as? String {
+                return URL(string: urlString)
+            } else {
+                throw FetchDataError.jsonDecodingError(NSError(domain: "URL not found in response", code: 404, userInfo: nil))
+            }
+            
+        } catch {
+            throw FetchDataError.networkError(error)
+        }
+    }
+
+
     
 }
