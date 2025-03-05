@@ -112,15 +112,71 @@ public class VoltHomeViewController: BaseViewController, SFSafariViewControllerD
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    private func setupHeader() {
+        
+        
+        if (VoltSDKContainer.voltInstance?.showSDKHeader ?? false) {
+            let headerView = UIView()
+            headerView.backgroundColor = hexStringToUIColor(hex: VoltSDKContainer.voltInstance?.primary_color ?? "#1434cb")
+            headerView.translatesAutoresizingMaskIntoConstraints = false
+            self.view.addSubview(headerView)
+            
+            let backButton = UIButton(type: .system)
+            backButton.setImage(UIImage(systemName: "chevron.backward"), for: .normal)
+            backButton.tintColor = .white
+            backButton.addTarget(self, action: #selector(closeWebView), for: .touchUpInside)
+            backButton.translatesAutoresizingMaskIntoConstraints = false
+            let titleLabel = UILabel()
+            
+            // Set the text for the label
+            titleLabel.text = "Loan Against Mutual Fund"
+            
+            // Set text alignment to center
+            titleLabel.textAlignment = .center
+            
+            // Set font and color if needed
+            titleLabel.font = UIFont.systemFont(ofSize: 18)  // Example font
+            titleLabel.textColor = .white  // Or any color you'd like
+            
+            // Add the label to the header view
+            titleLabel.translatesAutoresizingMaskIntoConstraints = false
+            
+            
+            headerView.addSubview(backButton)
+            headerView.addSubview(titleLabel)
+            
+            
+            NSLayoutConstraint.activate([
+                titleLabel.centerXAnchor.constraint(equalTo: headerView.centerXAnchor), // Center horizontally
+                titleLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor), // Center vertically
+                titleLabel.leadingAnchor.constraint(greaterThanOrEqualTo: headerView.leadingAnchor, constant: 10), // Add some margin to the left
+                titleLabel.trailingAnchor.constraint(lessThanOrEqualTo: headerView.trailingAnchor, constant: -10) // Add some margin to the right
+            ])
+            
+            
+            // Constraints for headerView
+            NSLayoutConstraint.activate([
+                headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+                headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                headerView.heightAnchor.constraint(equalToConstant: 50)
+            ])
+            
+            // Constraints for backButton
+            NSLayoutConstraint.activate([
+                backButton.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 16),
+                backButton.centerYAnchor.constraint(equalTo: headerView.centerYAnchor)
+            ])
+        }
+    }
 
     
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         let isEnabled = navigationController?.interactivePopGestureRecognizer?.isEnabled
         
-        print("LEFT SWIPE \(isEnabled)")
         self.view.isUserInteractionEnabled = true
 
            // Create a left swipe gesture recognizer
@@ -147,9 +203,13 @@ public class VoltHomeViewController: BaseViewController, SFSafariViewControllerD
                // Inject the meta viewport tag to disable zoom
      
                
-               // Initialize voltWebView with the configuration
-        voltWebView = WKWebView(frame: UIScreen.main.bounds, configuration: config)
 
+        
+        let headerHeight: CGFloat = VoltSDKContainer.voltInstance?.showSDKHeader ?? false ? 50 : 0 // Adjust as needed
+        let webViewFrame = CGRect(x: 0, y: headerHeight, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - headerHeight)
+
+        voltWebView = WKWebView(frame: webViewFrame, configuration: config)
+        
         
         
         if voltWebView == nil {
@@ -174,7 +234,7 @@ public class VoltHomeViewController: BaseViewController, SFSafariViewControllerD
            // Add back button and fetch data
            addBackButton()
            fetchData()
-        
+           setupHeader()
     }
     
     @objc func handleSwipe(_ gesture: UISwipeGestureRecognizer) {
@@ -266,31 +326,58 @@ public class VoltHomeViewController: BaseViewController, SFSafariViewControllerD
         
     }
     
+    // Close action
+    @objc private func closeWebView() {
+        if let _ = self.presentingViewController {
+            // If the view controller was presented modally
+            self.dismiss(animated: true, completion: nil)
+        } else if self.navigationController != nil {
+            // If the view controller is part of a navigation stack
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
   
     
 
 
     func hexStringToUIColor(hex: String) -> UIColor {
-        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+        var cString: String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
 
-        if (cString.hasPrefix("#")) {
+        // Remove the "#" if present
+        if cString.hasPrefix("#") {
             cString.remove(at: cString.startIndex)
         }
 
-        if ((cString.count) != 6) {
+        // If the string is not 6 or 8 characters, return gray color
+        if cString.count != 6 && cString.count != 8 {
             return UIColor.gray
         }
 
-        var rgbValue:UInt64 = 0
+        // Default alpha value to 1.0 (fully opaque)
+        var alpha: CGFloat = 1.0
+
+        // If there are 8 characters, extract the alpha value from the last 2 characters
+        if cString.count == 8 {
+            let alphaHex = String(cString.suffix(2))
+            if let alphaValue = Int(alphaHex, radix: 16) {
+                alpha = CGFloat(alphaValue) / 255.0
+            }
+            cString = String(cString.prefix(6)) // Remove the last 2 characters (alpha part)
+        }
+
+        // Convert RGB components
+        var rgbValue: UInt64 = 0
         Scanner(string: cString).scanHexInt64(&rgbValue)
 
         return UIColor(
             red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
             green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
             blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
-            alpha: CGFloat(1.0)
+            alpha: alpha
         )
     }
+
     
     func showLinksClicked(urlStr: String) {
         if safarWebView == nil, let url = URL(string: urlStr) {

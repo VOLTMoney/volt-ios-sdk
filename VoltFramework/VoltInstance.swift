@@ -16,8 +16,9 @@ public class VoltInstance {
     let ssoToken : String
     let customerCode : String
     let target : String?
+    let showSDKHeader : Bool?
 
-    public init(voltEnv: VOLTENV? = nil, partner_platform: String?, primary_color: String? = nil, secondary_color: String? = nil, ref: String? = nil, ssoToken : String? = "", customerCode : String? = "", target : String? = "") {
+    public init(voltEnv: VOLTENV? = nil, partner_platform: String?, primary_color: String? = nil, secondary_color: String? = nil, ref: String? = nil, ssoToken : String? = "", customerCode : String? = "", target : String? = "" , showSDKHeader : Bool? = false ) {
         if voltEnv == nil {
             self.voltEnv = .STAGING
         } else {
@@ -30,6 +31,7 @@ public class VoltInstance {
         self.ref = ref
         self.ssoToken = ssoToken!
         self.customerCode = customerCode!
+        self.showSDKHeader = showSDKHeader
     }
     
 }
