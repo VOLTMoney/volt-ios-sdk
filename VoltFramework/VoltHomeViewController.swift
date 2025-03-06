@@ -205,12 +205,24 @@ public class VoltHomeViewController: BaseViewController, SFSafariViewControllerD
                
 
         
-        let headerHeight: CGFloat = VoltSDKContainer.voltInstance?.showSDKHeader ?? false ? 50 : 0 // Adjust as needed
-        let webViewFrame = CGRect(x: 0, y: headerHeight, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - headerHeight)
 
-        voltWebView = WKWebView(frame: webViewFrame, configuration: config)
+        //add white/black bg to prevent flicker when webview loads
+        voltWebView.backgroundColor = traitCollection.userInterfaceStyle == .dark ? .black : .white
+        
+
         
         
+                    NSLayoutConstraint.activate([
+                           voltWebView.topAnchor.constraint(equalTo: view.topAnchor , constant: VoltSDKContainer.voltInstance?.showSDKHeader ?? false ? 50 : 0),
+                           voltWebView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+                           voltWebView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                           voltWebView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                           voltWebView.heightAnchor.constraint(equalToConstant: 1) // Set a minimal height initially
+
+                       ])
+        
+        
+
         
         if voltWebView == nil {
             print("voltWebView is nil. Initialization failed.")
