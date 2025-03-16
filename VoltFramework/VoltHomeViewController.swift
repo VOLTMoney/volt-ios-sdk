@@ -227,7 +227,7 @@ public class VoltHomeViewController: BaseViewController, SFSafariViewControllerD
         if voltWebView == nil {
             print("voltWebView is nil. Initialization failed.")
         } else {
-            print("voltWebView initialized successfully.")
+            print("VoltWebView initialized successfully.")
         }
                // Set delegates
                voltWebView.uiDelegate = self
@@ -347,6 +347,7 @@ public class VoltHomeViewController: BaseViewController, SFSafariViewControllerD
             // If the view controller is part of a navigation stack
             self.navigationController?.popViewController(animated: true)
         }
+        exitCallback?("APP_CLOSED")
     }
     
   
