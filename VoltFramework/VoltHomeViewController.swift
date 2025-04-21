@@ -121,7 +121,6 @@ public class VoltHomeViewController: BaseViewController, SFSafariViewControllerD
             headerView.backgroundColor = hexStringToUIColor(hex: VoltSDKContainer.voltInstance?.primary_color ?? "#1434cb")
             headerView.translatesAutoresizingMaskIntoConstraints = false
             self.view.addSubview(headerView)
-            
             let backButton = UIButton(type: .system)
             backButton.setImage(UIImage(systemName: "chevron.backward"), for: .normal)
             backButton.tintColor = .white
@@ -201,26 +200,18 @@ public class VoltHomeViewController: BaseViewController, SFSafariViewControllerD
                config.userContentController = contentController
                
                // Inject the meta viewport tag to disable zoom
+    
+               voltWebView = WKWebView(frame: .zero, configuration: config)
+               voltWebView.translatesAutoresizingMaskIntoConstraints = false
+
      
-               
-
-        
-
-        //add white/black bg to prevent flicker when webview loads
-        voltWebView.backgroundColor = traitCollection.userInterfaceStyle == .dark ? .black : .white
+              //add white/black bg to prevent flicker when webview loads
+              voltWebView.backgroundColor = traitCollection.userInterfaceStyle == .dark ? .black : .white
         
 
         
         
-                    NSLayoutConstraint.activate([
-                           voltWebView.topAnchor.constraint(equalTo: view.topAnchor , constant: VoltSDKContainer.voltInstance?.showSDKHeader ?? false ? 50 : 0),
-                           voltWebView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-                           voltWebView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                           voltWebView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                           voltWebView.heightAnchor.constraint(equalToConstant: 1) // Set a minimal height initially
 
-                       ])
-        
         
 
         
@@ -238,8 +229,16 @@ public class VoltHomeViewController: BaseViewController, SFSafariViewControllerD
             // Fallback on earlier versions
         }
                // Add voltWebView to the view hierarchy
-               self.view.addSubview(voltWebView)
-           
+        self.view.addSubview(voltWebView)
+        
+        NSLayoutConstraint.activate([
+               voltWebView.topAnchor.constraint(equalTo: view.topAnchor , constant: VoltSDKContainer.voltInstance?.showSDKHeader ?? false ? 50 : 0),
+               voltWebView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+               voltWebView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+               voltWebView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+               voltWebView.heightAnchor.constraint(equalToConstant: 1) // Set a minimal height initially
+
+           ])
            // Load the web content if necessary
          
 
