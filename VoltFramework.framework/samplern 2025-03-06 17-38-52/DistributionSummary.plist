@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>samplern.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>buildNumber</key>
+			<string>1</string>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>4EBA3764BA1A8BE5780DB952F2FF19237B1C41C7</string>
+				<key>dateExpires</key>
+				<string>20/04/25</string>
+				<key>type</key>
+				<string>Cloud Managed Apple Distribution</string>
+			</dict>
+			<key>embeddedBinaries</key>
+			<array>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>buildNumber</key>
+					<string>0.12.0</string>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>4EBA3764BA1A8BE5780DB952F2FF19237B1C41C7</string>
+						<key>dateExpires</key>
+						<string>20/04/25</string>
+						<key>type</key>
+						<string>Cloud Managed Apple Distribution</string>
+					</dict>
+					<key>name</key>
+					<string>hermes.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>8CZYJ7U5J2</string>
+						<key>name</key>
+						<string>SALTER TECHNOLOGIES PRIVATE LIMITED</string>
+					</dict>
+					<key>versionNumber</key>
+					<string>0.12.0</string>
+				</dict>
+			</array>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>8CZYJ7U5J2.com.anonymous.samplern</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>8CZYJ7U5J2</string>
+				<key>get-task-allow</key>
+				<false/>
+			</dict>
+			<key>name</key>
+			<string>samplern.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>d4b6fea1-3ec3-49d0-ac6f-2228b7537a81</string>
+				<key>dateExpires</key>
+				<string>20/04/25</string>
+				<key>name</key>
+				<string>iOS Team Ad Hoc Provisioning Profile: com.anonymous.samplern</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>8CZYJ7U5J2</string>
+				<key>name</key>
+				<string>SALTER TECHNOLOGIES PRIVATE LIMITED</string>
+			</dict>
+			<key>versionNumber</key>
+			<string>1.0.0</string>
+		</dict>
+	</array>
+</dict>
+</plist>
