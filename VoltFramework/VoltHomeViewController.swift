@@ -137,43 +137,15 @@ public class VoltHomeViewController: BaseViewController, SFSafariViewControllerD
                self.navigationController?.navigationBar.backgroundColor = hexStringToUIColor(hex: color)
                self.navigationController?.navigationBar.standardAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
 
-               // Configure the WebView
-               let contentController = WKUserContentController()
-               contentController.add(self, name: "voltMessageHandler")
-               
-               let config = WKWebViewConfiguration()
-               config.userContentController = contentController
-               
-               // Inject the meta viewport tag to disable zoom
-     
-               
-               // Initialize voltWebView with the configuration
-        voltWebView = WKWebView(frame: UIScreen.main.bounds, configuration: config)
-
-        
-        
-        if voltWebView == nil {
-            print("voltWebView is nil. Initialization failed.")
-        } else {
-            print("voltWebView initialized successfully.")
-        }
-               // Set delegates
-               voltWebView.uiDelegate = self
-               voltWebView.navigationDelegate = self
+        // Use the XIB webView and its constraints so safe-area sizing is preserved.
+        voltWebView.configuration.userContentController.add(self, name: "voltMessageHandler")
+        voltWebView.scrollView.contentInsetAdjustmentBehavior = .never
+        voltWebView.uiDelegate = self
+        voltWebView.navigationDelegate = self
         if #available(iOS 16.4, *) {
             voltWebView.isInspectable = true
-        } else {
-            // Fallback on earlier versions
         }
-               // Add voltWebView to the view hierarchy
-               self.view.addSubview(voltWebView)
-           
-           // Load the web content if necessary
-         
-
-           // Add back button and fetch data
-           addBackButton()
-           fetchData()
+        addBackButton()
         
     }
     
